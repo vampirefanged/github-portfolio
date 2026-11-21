@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OC Forge · AI Character Builder</title>
+  <meta name="description" content="OC Forge turns a few seed ideas into a complete original character sheet using AI: backstory, personality, palette, and design notes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=JetBrains+Mono:wght@500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="back" href="../../index.html#projects">← Chi’s portfolio</a>
+    <h1>OC <span>Forge</span></h1>
+    <p class="sub">An AI assistant that turns a few seed ideas into a complete original character sheet.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="seeds-title">
+      <h2 id="seeds-title">1 · Seeds</h2>
+      <form id="seed-form" novalidate>
+        <label>Name <span class="opt">(optional)</span>
+          <input id="name" name="name" maxlength="40" placeholder="Leave blank to let AI choose">
+        </label>
+        <label>Archetype or species
+          <input id="archetype" name="archetype" maxlength="60" placeholder="e.g. retired knight, alien florist">
+        </label>
+        <label>Genre or setting
+          <input id="genre" name="genre" maxlength="60" placeholder="e.g. cozy fantasy village, cyberpunk port">
+        </label>
+        <label>Key traits <span class="opt">(comma separated)</span>
+          <input id="traits" name="traits" maxlength="160" placeholder="e.g. stubborn, kind, afraid of birds">
+        </label>
+        <label>Visual vibe
+          <input id="vibe" name="vibe" maxlength="80" placeholder="e.g. punk, pastel, worn leather">
+        </label>
+        <label>Extra notes
+          <textarea id="notes" name="notes" maxlength="300" rows="3" placeholder="Anything else the character must include"></textarea>
+        </label>
+
+        <fieldset class="mode">
+          <legend>2 · Mode</legend>
+          <label class="radio"><input type="radio" name="mode" value="demo" checked> Demo <span class="opt">(offline, no key needed)</span></label>
+          <label class="radio"><input type="radio" name="mode" value="ai"> AI <span class="opt">(your own API key)</span></label>
+        </fieldset>
+
+        <div id="ai-settings" class="ai-settings" hidden>
+          <label>Provider <select id="provider" name="provider"></select></label>
+          <label>Model <input id="model" name="model" maxlength="60" spellcheck="false"></label>
+          <label>API key
+            <input id="api-key" name="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="Paste your key">
+          </label>
+          <label class="check"><input id="remember-key" type="checkbox"> Remember key on this device</label>
+          <p class="hint">Your key goes only from your browser to the provider you pick. It is never sent to this site. <a id="key-link" href="#" target="_blank" rel="noopener">Get a key</a></p>
+        </div>
+
+        <div class="buttons">
+          <button id="generate" class="btn primary" type="submit">Forge demo character</button>
+          <button id="example" class="btn ghost" type="button">Fill example</button>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+      </form>
+
+      <div class="history-box">
+        <div class="history-head"><h2>Recent</h2><button id="clear-history" class="link" type="button">Clear</button></div>
+        <ul id="history" class="history"></ul>
+      </div>
+    </section>
+
+    <section class="result" aria-label="Character sheet">
+      <div id="empty-state" class="empty">
+        <p class="big">Your character sheet appears here.</p>
+        <p>Add a few seeds, then press Forge. Try <strong>Fill example</strong> for a quick start.</p>
+      </div>
+      <article id="sheet" class="sheet" hidden></article>
+    </section>
+  </main>
+
+  <footer class="foot">Built by Chiara Melagrani with HTML, CSS, and JavaScript · AI-assisted development documented in the <a href="https://github.com/vampirefanged/github-portfolio/tree/main/projects/oc-builder">project README</a>.</footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

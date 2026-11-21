@@ -1,0 +1,11 @@
+{
+  "name": "oc-forge",
+  "version": "1.0.0",
+  "description": "AI-assisted original character builder (static web app).",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT"
+}

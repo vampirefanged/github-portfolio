@@ -32,12 +32,19 @@ a { color: var(--pop); }
 .panel { padding: 22px; position: sticky; top: 16px; }
 .panel h2, .mode legend { font: 400 1.35rem var(--display); margin: 0 0 12px; padding: 0; }
 
+/* Seed form and inputs */
 form { display: flex; flex-direction: column; gap: 12px; }
 label { display: flex; flex-direction: column; gap: 4px; font-weight: 700; font-size: .92rem; }
 .opt { font-weight: 400; color: var(--muted); }
 input, select, textarea { font: inherit; font-weight: 400; color: var(--ink); background: var(--bg); border: 2px solid var(--line); border-radius: 10px; padding: 9px 11px; width: 100%; }
 input:focus, select:focus, textarea:focus { border-color: var(--pop); outline: none; }
 textarea { resize: vertical; }
+
+/* Extra notes live character counter */
+.char-count { display: block; text-align: right; font-size: 0.8rem; opacity: 0.75; margin-top: 0.25rem; }
+.char-count[data-near-limit="true"] { color: #f59e0b; opacity: 1; font-weight: 600; }
+
+/* Generation mode and AI settings */
 .mode { border: 0; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 6px; }
 .radio, .check { flex-direction: row; align-items: center; gap: 8px; font-weight: 500; }
 .radio input, .check input { width: auto; }
@@ -45,6 +52,7 @@ textarea { resize: vertical; }
 .ai-settings[hidden] { display: none; }
 .hint { font-size: .85rem; color: var(--muted); margin: 0; }
 
+/* Buttons and banners */
 .buttons { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
 .btn { font: 400 1.05rem var(--display); border: 3px solid var(--ink); border-radius: 12px; padding: 10px 16px; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); transition: transform .1s, box-shadow .1s; }
 .btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
@@ -53,12 +61,14 @@ textarea { resize: vertical; }
 .ghost { background: var(--surface); color: var(--ink); }
 .link { background: none; border: 0; color: var(--pop); font: inherit; font-weight: 700; cursor: pointer; padding: 0; }
 
+/* Status alerts and retry button */
 .status { margin: 0; padding: 10px 12px; border-radius: 10px; font-size: .92rem; border: 2px solid var(--line); }
 .status[data-kind="error"] { border-color: var(--pop); }
 .status[data-kind="ok"] { border-color: var(--mint); }
 .status[data-kind="warn"] { border-color: var(--sun); }
 .status[data-kind="busy"] { border-style: dashed; }
 
+/* Character history */
 .history-box { margin-top: 22px; border-top: 2px dashed var(--line); padding-top: 14px; }
 .history-head { display: flex; justify-content: space-between; align-items: baseline; }
 .history { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
@@ -69,18 +79,23 @@ textarea { resize: vertical; }
 .empty { padding: 48px 28px; text-align: center; color: var(--muted); }
 .empty .big { font: 400 1.6rem var(--display); color: var(--ink); margin: 0 0 6px; }
 
+/* Character sheet */
 .sheet { padding: 28px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 .sheet-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
 .eyebrow { font: 500 .78rem var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin: 0; }
 .sheet h2 { font: 400 clamp(2rem, 5vw, 3rem)/1.05 var(--display); margin: 4px 0; }
 .tagline { margin: 0; font-style: italic; color: var(--muted); max-width: 60ch; }
 .age { font: 400 1.1rem var(--display); background: var(--sun); color: #1C1440; border: 3px solid var(--ink); border-radius: 12px; padding: 4px 12px; margin: 0; }
+
+/* Traits and color palette */
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { background: var(--mint); color: #0E2B26; font-weight: 700; padding: 4px 12px; border: 2px solid var(--ink); border-radius: 999px; }
 .palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
 .swatch { display: flex; flex-direction: column; gap: 2px; font-size: .85rem; }
 .swatch-color { height: 64px; border: 3px solid var(--ink); border-radius: 12px; margin-bottom: 4px; }
 .swatch span:nth-of-type(1) { font-family: var(--mono); }
+
+/* Content blocks, grids, and voice lines */
 .block h3 { font: 400 1.2rem var(--display); margin: 0 0 6px; }
 .block p { margin: 0; }
 .block ul { margin: 0; padding-left: 20px; }
@@ -88,12 +103,46 @@ textarea { resize: vertical; }
 .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .voice blockquote { margin: 6px 0; padding: 8px 14px; border-left: 5px solid var(--pop); background: var(--bg); border-radius: 0 10px 10px 0; }
+
+/* Sheet footer and export actions */
 .sheet-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; border-top: 2px dashed var(--line); padding-top: 14px; font-size: .85rem; }
 .actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .actions .btn { font-size: .9rem; padding: 7px 12px; }
-
 .foot { max-width: 1200px; margin: 0 auto; padding: 20px; color: var(--muted); font-size: .85rem; }
 
+/* Retry button inside status banner */
+.retry-btn {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.65rem;
+  font: inherit;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.retry-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Extra notes live character counter */
+.char-count {
+  display: block;
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.75;
+  margin-top: 0.25rem;
+}
+
+.char-count[data-near-limit="true"] {
+  color: #f59e0b;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* Breakpoints and accessibility */
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
   .panel { position: static; }

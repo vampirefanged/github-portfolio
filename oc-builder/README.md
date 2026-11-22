@@ -2,9 +2,9 @@
 
 OC Forge is a browser app that turns a few seed ideas into a complete, original character sheet. You enter a name, archetype, setting, traits, and visual vibe; the app sends a structured prompt to an AI model and displays a character with a backstory, personality, likes and dislikes, voice lines, a color palette, design notes, and story hooks.
 
-**Live demo:** https://vampirefanged.github.io/github-portfolio/projects/oc-builder/
+**Live demo:** https://vampirefanged.github.io/github-portfolio/oc-builder/
 
-![OC Forge character sheet](../../assets/screenshots/oc-forge-sheet.png)
+![OC Forge character sheet](../assets/screenshots/oc-forge-sheet.png)
 
 ## Why I built it
 
@@ -30,7 +30,7 @@ I design original characters (OCs) for my art and Roblox work, and the slowest p
 | AI APIs | Google Gemini `generateContent`, OpenAI Chat Completions, Anthropic Messages |
 | Testing | Node.js built-in test runner (`node --test`) |
 | Hosting | GitHub Pages (static) |
-| AI-assisted development | Claude (see [AI prompt log](../../docs/ai-prompt-log.md)) |
+| AI-assisted development | Claude (see [AI prompt log](../docs/ai-prompt-log.md)) |
 
 ## How it works
 
@@ -76,7 +76,7 @@ Open the live demo link above. Demo mode works immediately. For AI mode, open **
 ES modules need a local web server (opening the file directly will not work):
 
 ```bash
-cd projects/oc-builder
+cd oc-builder
 python -m http.server 8000
 # then open http://localhost:8000
 ```
@@ -86,7 +86,7 @@ python -m http.server 8000
 Requires Node.js 18 or newer.
 
 ```bash
-cd projects/oc-builder
+cd oc-builder
 npm test
 ```
 
@@ -126,7 +126,7 @@ There are 13 tests covering input cleaning, prompt building, JSON parsing, schem
 
 | Desktop | Phone | AI settings |
 | --- | --- | --- |
-| ![Desktop](../../assets/screenshots/oc-forge-sheet.png) | ![Phone](../../assets/screenshots/oc-forge-mobile.png) | ![Settings](../../assets/screenshots/oc-forge-settings.png) |
+| ![Desktop](../assets/screenshots/oc-forge-sheet.png) | ![Phone](../assets/screenshots/oc-forge-mobile.png) | ![Settings](../assets/screenshots/oc-forge-settings.png) |
 
 ## Author
 

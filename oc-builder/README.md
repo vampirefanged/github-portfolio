@@ -4,6 +4,8 @@ OC Forge is a browser app that turns a few seed ideas into a complete, original 
 
 **Live demo:** https://vampirefanged.github.io/github-portfolio/oc-builder/
 
+**Demo video:** [oc-forge-demo.mp4](oc-forge-demo.mp4)
+
 ![OC Forge character sheet](../assets/screenshots/oc-forge-sheet.png)
 
 ## Why I built it
@@ -121,6 +123,49 @@ There are 13 tests covering input cleaning, prompt building, JSON parsing, schem
 - "Regenerate this section" buttons for backstory or palette only.
 - Generating a simple reference image from the design notes.
 - Saving characters to a shared gallery.
+
+## Example characters (real AI output)
+
+These were generated during testing with **Google Gemini · `gemini-3.5-flash-lite` · prompt v1.2**. Watch the full run in the [demo video](oc-forge-demo.mp4).
+
+### Magnus Pyre
+
+| Seed | Value |
+| --- | --- |
+| Name | magnus |
+| Archetype | lava lion anthro |
+| Setting | modern day but fantasy |
+| Traits | hyper, focused, rough, alpha |
+| Visual vibe | punk, glowing, rugged |
+
+![Magnus Pyre character sheet](examples/magnus-1.png)
+![Magnus Pyre traits, voice lines, design notes, and story hooks](examples/magnus-2.png)
+
+### Nibble
+
+| Seed | Value |
+| --- | --- |
+| Archetype | small shark alien |
+| Setting | lilo and stitch vibes |
+| Traits | clueless, innocent, cute, playful |
+| Visual vibe | bright, different blues, big black eyes |
+| Extra notes | this creature does not speak, only makes sounds |
+
+![Nibble character sheet](examples/nibble-1.png)
+![Nibble traits, voice lines, design notes, and story hooks](examples/nibble-2.png)
+
+### Vesperum
+
+| Seed | Value |
+| --- | --- |
+| Archetype | lanky, scary monster |
+| Setting | the forest |
+| Traits | stalker, creepy, gentle |
+| Visual vibe | almost fully black figure, bright yellow eyes |
+| Extra notes | similar stature to slenderman mixed with mothman |
+
+![Vesperum character sheet](examples/vesperum-1.png)
+![Vesperum traits, voice lines, design notes, and story hooks](examples/vesperum-2.png)
 
 ## Screenshots
 

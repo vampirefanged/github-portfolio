@@ -52,7 +52,7 @@
 **Market observations.**
 
 - Truly entry-level, fully remote game design roles are rare. Many "associate" titles still ask for 1–2 years, which can include academic and personal work.
-- Internships (such as Insomniac's) are the clearest entry point, but they require current enrollment, so I should apply before I graduate in December 2026.
+- Internships are the clearest entry point, but they require current enrollment, so I should apply before I graduate in December 2026.
 - Roblox studios are a strong match because my experience is directly relevant there.
 - Pay ranges vary widely: from about $36.50/hr for internships to $140K+ for Roblox's early-career program.
 

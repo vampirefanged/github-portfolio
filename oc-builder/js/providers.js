@@ -7,7 +7,7 @@ import { SYSTEM_PROMPT, buildUserPrompt } from "./prompt.js";
 export const PROVIDERS = {
   gemini: {
     label: "Google Gemini (free tier available)",
-    defaultModel: "gemini-2.5-flash",
+    defaultModel: "gemini-3.5-flash-lite",
     keyHelp: "https://aistudio.google.com/app/apikey",
     async generate({ apiKey, model, inputs, signal }) {
       const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;

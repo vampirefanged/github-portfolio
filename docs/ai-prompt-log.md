@@ -76,7 +76,7 @@ Rules:
 | Version | Change | Why |
 | --- | --- | --- |
 | 1.2 | Initial version | — |
-| 1.3 | Second version | Error 404 and 503 fix, added gemini-3.5-flash-lite as the default |
+| 1.3 | Second version | Error 404 and 503 fix, added gemini-3.8-flash-lite as the default |
 | 1.4 | Third version | Added live character count, more examples, and more for the offline demo. |
 
 

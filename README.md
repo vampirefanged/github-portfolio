@@ -12,10 +12,10 @@ Professional portfolio for **Chiara (Chi) Melagrani**, B.S. Computer Science (Co
 | --- | --- |
 | Portfolio website (GitHub Pages) | [`index.html`](index.html) |
 | Resume (PDF) | [`assets/resume.pdf`](assets/resume.pdf) |
-| AI assistant project: **OC Forge** | [`projects/oc-builder/`](projects/oc-builder/) |
-| AI project documentation | [`projects/oc-builder/README.md`](projects/oc-builder/README.md) |
-| Course project: Procedural Maze Generator (Unity, C#) | [`projects/maze-generator/`](projects/maze-generator/) |
-| Course project: Ghastly Midnights (C++, Direct3D) | [`projects/ghastly-midnights/`](projects/ghastly-midnights/) |
+| AI assistant project: **OC Forge** | [`oc-builder/`](oc-builder/) |
+| AI project documentation | [`oc-builder/README.md`](oc-builder/README.md) |
+| Course project: Procedural Maze Generator (Unity, C#) | [`maze-generator/`](maze-generator/) |
+| Course project: Ghastly Midnights (C++, Direct3D) | [`ghastly-midnights/`](ghastly-midnights/) |
 | AI prompt log | [`docs/ai-prompt-log.md`](docs/ai-prompt-log.md) |
 | Job search analysis | [`docs/job-search-analysis.md`](docs/job-search-analysis.md) |
 | Skills gap analysis | [`docs/skills-gap-analysis.md`](docs/skills-gap-analysis.md) |
@@ -44,16 +44,15 @@ github-portfolio/
 │   ├── art/                   # Character art and commissions
 │   ├── heads/                 # Roblox dynamic head thumbnails
 │   └── screenshots/           # Project screenshots
-├── projects/
-│   ├── maze-generator/        # Course project: Unity maze (C# scripts, screenshots, demo)
-│   ├── ghastly-midnights/     # Course project: C++ ghost shooter (screenshots, demo)
-│   └── oc-builder/            # AI assistant project (OC Forge)
-│       ├── index.html
-│       ├── css/style.css
-│       ├── js/                # app, prompt, providers, schema, demo, export
-│       ├── tests/             # Node unit tests
-│       ├── package.json
-│       └── README.md
+├── maze-generator/            # Course project: Unity maze (C# scripts, screenshots, demo)
+├── ghastly-midnights/         # Course project: C++ ghost shooter (screenshots, demo)
+├── oc-builder/                # AI assistant project (OC Forge)
+│   ├── index.html
+│   ├── css/style.css
+│   ├── js/                    # app, prompt, providers, schema, demo, export
+│   ├── tests/                 # Node unit tests
+│   ├── package.json
+│   └── README.md
 └── docs/
     ├── ai-prompt-log.md
     ├── job-search-analysis.md / .pdf
@@ -77,7 +76,7 @@ python -m http.server 8000
 Run the AI project's tests:
 
 ```bash
-cd projects/oc-builder
+cd oc-builder
 npm test
 ```
 

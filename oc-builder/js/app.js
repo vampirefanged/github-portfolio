@@ -98,10 +98,25 @@ function readInputs() {
   };
 }
 
-function setStatus(message, kind = "info") {
-  els.status.textContent = message;
+function setStatus(message, kind = "info", { allowRetry = false } = {}) {
+  els.status.textContent = "";
   els.status.dataset.kind = kind;
   els.status.hidden = !message;
+
+  if (!message) return;
+
+  els.status.append(document.createTextNode(message));
+
+  if (allowRetry) {
+    const retryBtn = document.createElement("button");
+    retryBtn.type = "button";
+    retryBtn.className = "retry-btn";
+    retryBtn.textContent = "Try again";
+    retryBtn.addEventListener("click", () => {
+      els.form.requestSubmit();
+    });
+    els.status.append(" ", retryBtn);
+  }
 }
 
 async function onGenerate(event) {
@@ -141,7 +156,7 @@ async function onGenerate(event) {
     setStatus(problems.length ? `Done, with a few gaps: ${problems.join(" ")}` : "Done! Your character is ready.", problems.length ? "warn" : "ok");
   } catch (err) {
     const msg = err.name === "AbortError" ? "The request timed out. Try again." : err.message;
-    setStatus(msg || "Something went wrong.", "error");
+    setStatus(msg || "Something went wrong.", "error", { allowRetry: true });
   } finally {
     clearTimeout(timeout);
     els.generate.disabled = false;

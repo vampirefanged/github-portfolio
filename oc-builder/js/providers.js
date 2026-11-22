@@ -91,8 +91,9 @@ async function readJson(res) {
   if (!res.ok) {
     const detail = data?.error?.message || data?.error?.type || res.statusText;
     if (res.status === 401 || res.status === 403) throw new Error(`The API key was rejected (${res.status}). Check that it is correct and active.`);
-    if (res.status === 429) throw new Error("Rate limit reached. Wait a minute and try again.");
     if (res.status === 404) throw new Error(`Model not found (${res.status}). Check the model name in Settings.`);
+    if (res.status === 429) throw new Error("Rate limit reached. Wait a minute and try again.");
+    if (res.status === 503) throw new Error("The AI service is busy right now. Wait a minute and try again, or switch to a lighter model in Settings.");
     throw new Error(`Request failed (${res.status}): ${detail}`);
   }
   return data;

@@ -71,7 +71,7 @@ Rules:
 - Respond with ONLY a JSON object, no markdown, matching exactly this shape: {...}
 ```
 
-**Iterations:** The prompt was written in one pass (v1.2 is the version number in the code). The key choices were requiring an exact JSON shape, requiring original characters, and asking for "drawable" design notes so results are usable for real art. Record any changes you make after testing with a real key in the table below.
+**Iterations:** The prompt was written in one pass. The key choices were requiring an exact JSON shape, requiring original characters, and asking for "drawable" design notes so results are usable for real art. Here are recorded changes:
 
 | Version | Change | Why |
 | --- | --- | --- |

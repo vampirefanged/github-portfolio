@@ -5,13 +5,13 @@
 
 import { cleanInputs } from "./prompt.js";
 
-const NAMES = ["Vesper", "Kiki", "Odalys", "Rook", "Marlow", "Juniper", "Taro", "Sable", "Ines", "Corvin"];
-const ROLES = ["wandering mapmaker", "retired monster hunter", "night-market cook", "lighthouse keeper", "rogue archivist", "traveling tinkerer"];
-const PERSONALITY = ["stubborn", "warm", "curious", "dry-humored", "loyal", "restless", "soft-spoken", "reckless", "patient", "proud"];
-const LIKES = ["rainy mornings", "coconuts", "old maps", "quiet company", "spicy food", "collecting buttons", "late-night radio", "the color orange"];
-const DISLIKES = ["flies", "awkward small talk", "being rushed", "broken promises", "crowded markets", "cold soup", "having nothing to do"];
-const STRENGTHS = ["reads people quickly", "never panics", "fixes anything with tape", "remembers every face"];
-const FLAWS = ["holds grudges", "takes on too much", "avoids asking for help", "trusts too easily"];
+const NAMES = ["Vesper", "Kiki", "Odalys", "Rook", "Marlow", "Juniper", "Taro", "Sable", "Ines", "Corvin", "Valerio", "Sasha", "Daisy", "Beau", "Karlo"];
+const ROLES = ["wandering mapmaker", "retired monster hunter", "night-market cook", "lighthouse keeper", "rogue archivist", "traveling tinkerer", "wrestler", "retired", "teacher", "barkeep"];
+const PERSONALITY = ["stubborn", "warm", "curious", "dry-humored", "loyal", "restless", "soft-spoken", "reckless", "patient", "proud", "hot headed", "short tempered",  "joyful", "clueless", "confident", "optimistic"];
+const LIKES = ["rainy mornings", "coconuts", "old maps", "quiet company", "spicy food", "collecting buttons", "late-night radio", "the color orange", "dancing in the rain", "midnight walks", "counting the stars", "traveling"];
+const DISLIKES = ["flies", "awkward small talk", "being rushed", "broken promises", "crowded markets", "cold soup", "having nothing to do", "personal bubble popped", "horror movies", "romcoms", "the smell of wet dog"];
+const STRENGTHS = ["reads people quickly", "never panics", "fixes anything with tape", "remembers every face", "doesn't hesitate" , "jack of all trades", "never smells bad", "lives in the moment" ];
+const FLAWS = ["holds grudges", "takes on too much", "avoids asking for help", "trusts too easily", "egotistical" , "overthinker"];
 const PALETTES = [
   [["#2E3A59", "Midnight Navy", "Main outfit"], ["#E07A3F", "Ember Orange", "Accents"], ["#F2D7A0", "Sand", "Skin highlights"], ["#7FB7A4", "Sea Glass", "Accessories"]],
   [["#3B1F2B", "Plum Shadow", "Hair"], ["#C94F6D", "Rose", "Scarf"], ["#F4E3D7", "Cream", "Shirt"], ["#5B8C5A", "Moss", "Bag"]],

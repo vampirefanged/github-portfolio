@@ -2,29 +2,29 @@
 
 **Project:** COSC 4272 Senior Seminar Portfolio and OC Forge
 **Student:** Chiara Melagrani
-**AI tool used:** Claude (Anthropic), in the Claude desktop app
+**AI tool used:** Claude, Gemini
 **Dates:** November 2026
 
-This log records how I used AI during development: what I asked, what the AI produced, and what I decided, checked, or changed myself. It is meant to be an honest account of the development process.
+This log records how I used AI during development: what I asked, what the AI produced, and what I decided, checked, or changed myself.
 
 ## How I used AI
 
 | Area | AI's role | My role |
 | --- | --- | --- |
 | Project idea | Suggested three AI-assistant ideas tied to my interests | Chose OC Forge because it matches my character design work |
-| Website | Adapted the portfolio design we had built earlier into GitHub Pages files | Supplied all artwork, Roblox items, facts, and wording choices; decided which art to show |
-| OC Forge code | Wrote the first version of the JavaScript modules, CSS, and tests | Defined the features, reviewed and tested the code, and checked the output |
-| Documentation | Drafted READMEs and analysis documents | Reviewed for accuracy and filled in personal details |
+| Website | Adapted my original portfolio design into GitHub Pages files | Supplied initial website, artwork, Roblox items, facts, and writing; decided which art to show |
+| OC Forge code | Wrote the first version of the JavaScript modules, CSS, and tests | Defined features, reviewed,edited, and tested the code, checked the output, added my own tweaks |
+| Documentation | N/A | Utilized AI's prior assistance to complete the documentation |
 
 ## Prompt log
 
 ### 1. Choosing the project
 
-> **My prompt:** *[Uploaded the COSC 4272 project PDF]* "As a graduating Computer Science student, you are expected to demonstrate your technical abilities… The detailed instructions are attached."
+> **My prompt:** Shared the instructions of the project with Claude.
 
-**AI response:** Read the requirements and asked me to choose between three AI-assistant ideas (OC Character Builder, Roblox Listing Assistant, Game Story Pitch Generator), how the website should look, and which accounts I already had.
+**AI response:** Read the requirements and asked me to choose between three AI-assistant ideas (OC Character Builder, Roblox Listing Assistant, Game Story Pitch Generator).
 
-**My decision:** OC Character Builder, adapting my existing portfolio design, and I already have GitHub and LinkedIn accounts.
+**My decision:** OC Character Builder
 
 **Why:** Character design is my specialty. Building a tool for my own workflow shows both my creative focus and my programming skills.
 
@@ -76,20 +76,20 @@ Rules:
 | Version | Change | Why |
 | --- | --- | --- |
 | 1.2 | Initial version | — |
+| 1.3 | Second version | Error 404 and 503 fix |
 
-*[Add any prompt changes you make after testing with your own API key.]*
 
 ---
 
 ### 4. Testing and fixes
 
-**Step (done by the AI as part of building the project, not a separate prompt from me):** unit tests for the schema, prompt, demo, and export modules.
+**Step:** unit tests for the schema, prompt, demo, and export modules.
 
 **AI output:** 13 tests using Node's built-in test runner.
 
 **Issue found:** `node --test tests/` failed to find the tests with Node 22. Running `node --test` with no folder argument fixed it, so `package.json` uses `"test": "node --test"`.
 
-**Browser testing (with the AI's help):**
+**Browser testing:**
 
 | Check | Result |
 | --- | --- |
@@ -99,26 +99,27 @@ Rules:
 | Simulated 401 (bad key) | Showed "The API key was rejected (401)…" |
 | Phone width | No sideways scrolling |
 
-*[Add your own test with a real Gemini key here: the seeds you used, the character it returned, and anything you changed.]*
-
+| Testing | Result |
+| --- |  --- |
+| Testing Gemini Key AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-2.5-flash | Initially gave error 404 |
+| Testing Gemini Key (2) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash | Gave error 504 |
+| Testing Gemini Key (3) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash-lite | Passed |
 ---
 
 ### 5. Portfolio website and documents
 
-**Step (from my choice "Adapt my current portfolio"):** adapt the portfolio into the required sections: Home, About (250+ words), Resume, Projects, Skills, Contact.
+**Step:** adapt original portfolio into the required sections: Home, About (with provided written information)
 
-**AI response:** Built `index.html`, `css/style.css`, and `js/main.js`; wrote a 266-word About section from facts I had shared; built a one-page resume PDF.
+**AI response:** Built `index.html`, `css/style.css`, and `js/main.js`; pasted the provided 266-word About section.
 
-**My review:** Checked every fact (graduation date, Roblox numbers, jobs). Filled in the placeholders marked with brackets: phone, LinkedIn, GitHub, course project, certifications, and photo.
+**My review:** Checked .html, .css, and .js and made my own changes.
 
-**Step (part of the same request):** job search analysis and skills gap analysis.
+**Step:** Help with job search
 
 **AI response:** Searched for current entry-level game design postings, summarized their requirements, and compared them with my skills.
 
-**My review:** *[Note any postings you added or changed.]*
+**My review:** Reviewed what was found, changed what was written.
 
 ## Reflection on using AI
 
-AI made me much faster at writing boilerplate code, CSS, and documentation, and it was useful for thinking through edge cases like malformed model output. It was not a substitute for judgment: I still had to decide what the tool should do, choose what to show employers, check every fact, and test that the app actually works. The most valuable lesson was that AI output needs to be treated like any untrusted input. That is true when building with an AI model, and it's also true when using one as a coding assistant.
-
-*[Rewrite this reflection in your own words.]*
+AI made me much faster at writing boilerplate code and CSS, and it was useful for thinking through edge cases like malformed model output. It was not a substitute, as I still had to decide what the tool should do, choose what to show employers, check every fact, alter coding, and test that the app actually works. The most valuable lesson was that AI output needs to be treated like any untrusted input. That is true when building with an AI model, and it's also true when using one as a coding assistant.

@@ -26,6 +26,8 @@ const els = {
   empty: $("#empty-state"),
   sheet: $("#sheet"),
   history: $("#history"),
+  notes: $('textarea[name="notes"]'),
+  notesCount: $("#notes-count"),
 };
 
 let current = null;
@@ -303,6 +305,17 @@ function download(filename, content, type) {
 }
 
 $("#clear-history").addEventListener("click", () => { remove(STORE.history); renderHistory(); });
+
+function updateNotesCount() {
+  if (!els.notes || !els.notesCount) return;
+  const len = els.notes.value.length;
+  const max = els.notes.maxLength || 300;
+  els.notesCount.textContent = `${len} / ${max}`;
+  els.notesCount.dataset.nearLimit = len >= max * 0.9 ? "true" : "false";
+}
+
+els.notes?.addEventListener("input", updateNotesCount);
+
 $("#example").addEventListener("click", () => {
   els.form.name.value = "Kiki";
   els.form.archetype.value = "gentle giant islander";
@@ -310,6 +323,7 @@ $("#example").addEventListener("click", () => {
   els.form.traits.value = "quiet, protective, dry humor, loves coconuts";
   els.form.vibe.value = "warm oranges, curly hair, relaxed streetwear";
   els.form.notes.value = "Hates flies and awkward conversations.";
+  updateNotesCount();
 });
 
 els.form.addEventListener("submit", onGenerate);

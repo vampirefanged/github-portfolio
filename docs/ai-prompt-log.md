@@ -101,15 +101,15 @@ Rules:
 | Phone width | No sideways scrolling |
 | Added live character count | Allowed users to see the 300 character limit |
 | Added more words to the offline demo version | Allows users to have more options without API key |
-| Added 'retry' button on error | Allowed users to retry when/if met with error 504 | 
+| Added 'retry' button on error | Allowed users to retry when/if met with error 503 | 
 
 | Testing | Result |
 | --- |  --- |
 | Testing Gemini Key [key redacted]  with gemini-2.5-flash | Initially gave error 404 |
-| Testing Gemini Key (2) [key redacted]  with gemini-3.8-flash | Gave error 503 |
-| Testing Gemini Key (3) [key redacted] with gemini-3.8-flash-lite | Passed |
+| Testing Gemini Key (2) [key redacted]  with gemini-3.5-flash | Gave error 503 |
+| Testing Gemini Key (3) [key redacted] with gemini-3.5-flash-lite | Passed |
 | Testing live character count | Passed |
-| Utilized Node.js to run 'npm tests' locally after updating the word lists, adding character count, and retry button. | 13/13 Passed
+| Utilized Node.js to run 'npm tests' locally after updating the word lists, adding character count, and retry button. | 13/13 Passed |
 ---
 
 ### 5. Portfolio website and documents

@@ -77,7 +77,7 @@ Rules:
 | --- | --- | --- |
 | 1.2 | Initial version | — |
 | 1.3 | Second version | Error 404 and 503 fix, added gemini-3.8-flash-lite as the default |
-| 1.4 | Third version | Added live character count, more examples, and more for the offline demo. |
+| 1.4 | Third version | Added live character count, retry button on error, more examples, and more for the offline demo. |
 
 
 ---
@@ -100,6 +100,8 @@ Rules:
 | Simulated 401 (bad key) | Showed "The API key was rejected (401)…" |
 | Phone width | No sideways scrolling |
 | Added live character count | Allowed users to see the 300 character limit |
+| Added more words to the offline demo version | Allows users to have more options without API key |
+| Added 'retry' button on error | Allowed users to retry when/if met with error 504 | 
 
 | Testing | Result |
 | --- |  --- |

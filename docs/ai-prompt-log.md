@@ -107,6 +107,7 @@ Rules:
 | Testing Gemini Key (2) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash | Gave error 504 |
 | Testing Gemini Key (3) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash-lite | Passed |
 | Testing live character count | Passed |
+| Utilized Node.js to run 'npm tests' locally after updating the word lists, adding character count, and retry button. | 13/13 Passed
 ---
 
 ### 5. Portfolio website and documents

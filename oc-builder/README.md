@@ -110,6 +110,8 @@ There are 13 tests covering input cleaning, prompt building, JSON parsing, schem
 | AI mode with a simulated Gemini response | Sheet renders; invalid hex color dropped; HTML in the response shown as plain text |
 | Rejected API key (simulated 401) | Clear error message shown |
 | Phone width (390 px) | No horizontal scrolling |
+| Live character counter | Added, Status: Working |
+| 3 additional tests | Status: Working |
 
 ## Known limitations
 

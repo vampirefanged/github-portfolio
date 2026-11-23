@@ -99,12 +99,14 @@ Rules:
 | Reply containing an invalid color and HTML tags | Invalid color dropped; HTML shown as plain text |
 | Simulated 401 (bad key) | Showed "The API key was rejected (401)…" |
 | Phone width | No sideways scrolling |
+| Added live character count | Allowed users to see the 300 character limit |
 
 | Testing | Result |
 | --- |  --- |
 | Testing Gemini Key AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-2.5-flash | Initially gave error 404 |
 | Testing Gemini Key (2) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash | Gave error 504 |
 | Testing Gemini Key (3) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash-lite | Passed |
+| Testing live character count | Passed |
 ---
 
 ### 5. Portfolio website and documents

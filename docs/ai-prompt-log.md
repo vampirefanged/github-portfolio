@@ -106,10 +106,11 @@ Rules:
 | Testing | Result |
 | --- |  --- |
 | Testing Gemini Key [key redacted]  with gemini-2.5-flash | Initially gave error 404 |
-| Testing Gemini Key (2) [key redacted]  with gemini-3.5-flash | Gave error 503 |
+| Testing Gemini Key (2) [key redacted]  with gemini-3.8-flash | Gave error 503 |
 | Testing Gemini Key (3) [key redacted] with gemini-3.5-flash-lite | Passed |
 | Testing live character count | Passed |
 | Utilized Node.js to run 'npm tests' locally after updating the word lists, adding character count, and retry button. | 13/13 Passed |
+
 ---
 
 ### 5. Portfolio website and documents

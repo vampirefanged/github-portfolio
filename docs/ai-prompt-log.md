@@ -105,9 +105,9 @@ Rules:
 
 | Testing | Result |
 | --- |  --- |
-| Testing Gemini Key AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-2.5-flash | Initially gave error 404 |
-| Testing Gemini Key (2) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash | Gave error 504 |
-| Testing Gemini Key (3) AQ.Ab8RN6KcZytIput_vo6qg0hWI5q2YXktaPp5tcE_GGT99dPnug with gemini-3.8-flash-lite | Passed |
+| Testing Gemini Key [key redacted]  with gemini-2.5-flash | Initially gave error 404 |
+| Testing Gemini Key (2) [key redacted]  with gemini-3.8-flash | Gave error 504 |
+| Testing Gemini Key (3) [key redacted] with gemini-3.8-flash-lite | Passed |
 | Testing live character count | Passed |
 | Utilized Node.js to run 'npm tests' locally after updating the word lists, adding character count, and retry button. | 13/13 Passed
 ---

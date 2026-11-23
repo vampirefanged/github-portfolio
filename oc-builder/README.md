@@ -105,13 +105,14 @@ There are 13 tests covering input cleaning, prompt building, JSON parsing, schem
 
 | Test | Result |
 | --- | --- |
-| 13 unit tests (`npm test`) | All pass |
+| 'npm test' run locally on Windows after demo and error-handling changes | 13/13 pass |
 | Demo mode with the example seeds | Character sheet renders |
 | AI mode with a simulated Gemini response | Sheet renders; invalid hex color dropped; HTML in the response shown as plain text |
 | Rejected API key (simulated 401) | Clear error message shown |
 | Phone width (390 px) | No horizontal scrolling |
 | Live character counter | Added, Status: Working |
 | 3 additional tests | Status: Working |
+![Passing npm test results](examples/test-results.png)
 
 ## Known limitations
 

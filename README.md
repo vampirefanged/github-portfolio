@@ -20,6 +20,7 @@ Professional portfolio for **Chiara (Chi) Melagrani**, B.S. Computer Science (Co
 | Job search analysis | [`docs/job-search-analysis.md`](docs/job-search-analysis.md) |
 | Skills gap analysis | [`docs/skills-gap-analysis.md`](docs/skills-gap-analysis.md) |
 | Screenshots | [`assets/screenshots/`](assets/screenshots/) |
+| Examples | [`oc-builder/examples/`](oc-builder/examples/) |
 
 ## Website sections
 

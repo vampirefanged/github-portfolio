@@ -1,8 +1,8 @@
-// main.js — artwork lightbox and copy-email button for the portfolio site.
+//main.js — artwork lightbox and copy-email button for the portfolio site.
 (function () {
   "use strict";
 
-  // ----- Lightbox -----
+  //Lightbox
   var imgs = [].slice.call(document.querySelectorAll("img.art"));
   var lb = document.getElementById("lb");
   var big = document.getElementById("lbImg");
@@ -37,6 +37,7 @@
     if (last) last.focus();
   }
 
+  //Make each thumbnail keyboard accessible
   imgs.forEach(function (el, n) {
     el.tabIndex = 0;
     el.setAttribute("role", "button");
@@ -46,6 +47,8 @@
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(n); }
     });
   });
+
+  //Click handlers
   document.getElementById("lbClose").addEventListener("click", close);
   big.addEventListener("click", close);
   document.getElementById("lbPrev").addEventListener("click", function () { show(i - 1); });
@@ -53,6 +56,8 @@
   lb.addEventListener("click", function (e) {
     if (e.target === lb || e.target.classList.contains("lb-stage")) close();
   });
+  
+  //Keybinds
   document.addEventListener("keydown", function (e) {
     if (lb.hidden) return;
     if (e.key === "Escape") close();
@@ -60,7 +65,7 @@
     else if (e.key === "ArrowRight") show(i + 1);
   });
 
-  // ----- Copy email -----
+  //Copy email
   var btn = document.getElementById("copyBtn");
   btn.addEventListener("click", function () {
     var text = document.getElementById("email").textContent;

@@ -1,6 +1,6 @@
-// app.js
-// UI controller for OC Forge. All model output is rendered with textContent,
-// never innerHTML, so text from the AI can't inject markup into the page.
+//app.js
+//UI controller for OC Forge. All model output is rendered with textContent,
+//never innerHTML, so text from the AI can't inject markup into the page.
 
 import { PROVIDERS } from "./providers.js";
 import { hasSeeds, PROMPT_VERSION } from "./prompt.js";
@@ -8,10 +8,12 @@ import { normalizeCharacter, parseModelJson } from "./schema.js";
 import { generateDemoCharacter } from "./demo.js";
 import { toMarkdown } from "./export.js";
 
+//localStorage keys and history cap
 const $ = (sel) => document.querySelector(sel);
 const STORE = { settings: "ocforge.settings", key: "ocforge.key", history: "ocforge.history" };
 const MAX_HISTORY = 8;
 
+//Cache
 const els = {
   form: $("#seed-form"),
   provider: $("#provider"),
@@ -33,7 +35,7 @@ const els = {
 let current = null;
 let inFlight = null;
 
-// ---------- storage helpers (storage can be blocked; never crash) ----------
+//Storage helpers (can be blocked, cannot crash)
 function load(key, fallback) {
   try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; } catch { return fallback; }
 }
@@ -44,7 +46,7 @@ function remove(key) {
   try { localStorage.removeItem(key); } catch { /* ignore */ }
 }
 
-// ---------- settings ----------
+//Settings
 function initSettings() {
   for (const [id, p] of Object.entries(PROVIDERS)) {
     const opt = document.createElement("option");
@@ -53,6 +55,7 @@ function initSettings() {
     els.provider.append(opt);
   }
   const s = load(STORE.settings, { provider: "gemini", model: PROVIDERS.gemini.defaultModel, mode: "demo" });
+  //Fallback to gemini if previous provider no longer exists
   els.provider.value = PROVIDERS[s.provider] ? s.provider : "gemini";
   els.model.value = s.model || PROVIDERS[els.provider.value].defaultModel;
   const savedKey = load(STORE.key, "");
@@ -60,7 +63,8 @@ function initSettings() {
   const modeInput = document.querySelector(`input[name="mode"][value="${s.mode === "ai" ? "ai" : "demo"}"]`);
   if (modeInput) modeInput.checked = true;
   syncSettingsUI();
-
+  
+//Reset the model to selected provider default when changed
   els.provider.addEventListener("change", () => {
     els.model.value = PROVIDERS[els.provider.value].defaultModel;
     syncSettingsUI();
@@ -72,6 +76,7 @@ function initSettings() {
   document.querySelectorAll('input[name="mode"]').forEach((r) => r.addEventListener("change", () => { syncSettingsUI(); persistSettings(); }));
 }
 
+//Uses API key help link, AI settings, and submit button
 function syncSettingsUI() {
   els.keyLink.href = PROVIDERS[els.provider.value].keyHelp;
   els.aiSettings.hidden = els.mode() !== "ai";
@@ -82,12 +87,13 @@ function persistSettings() {
   save(STORE.settings, { provider: els.provider.value, model: els.model.value.trim(), mode: els.mode() });
 }
 
+//Remember API key when opted in
 function persistKey() {
   if (els.remember.checked && els.key.value.trim()) save(STORE.key, els.key.value.trim());
   else remove(STORE.key);
 }
 
-// ---------- generation ----------
+//Generation
 function readInputs() {
   const fd = new FormData(els.form);
   return {
@@ -100,6 +106,7 @@ function readInputs() {
   };
 }
 
+//Update status banner, optional retry button 
 function setStatus(message, kind = "info", { allowRetry = false } = {}) {
   els.status.textContent = "";
   els.status.dataset.kind = kind;
@@ -121,6 +128,7 @@ function setStatus(message, kind = "info", { allowRetry = false } = {}) {
   }
 }
 
+//Handles form submissions
 async function onGenerate(event) {
   event.preventDefault();
   const inputs = readInputs();
@@ -129,6 +137,7 @@ async function onGenerate(event) {
     return;
   }
 
+  //Offline demo bypasses network requests and API keys
   if (els.mode() === "demo") {
     const { character, problems } = normalizeCharacter(generateDemoCharacter(inputs));
     show(character, { source: "Offline demo (no AI)", problems });
@@ -143,6 +152,7 @@ async function onGenerate(event) {
     return;
   }
 
+  //Cancel prior requests before starting anew
   inFlight?.abort();
   inFlight = new AbortController();
   const timeout = setTimeout(() => inFlight.abort(), 45000);
@@ -165,7 +175,7 @@ async function onGenerate(event) {
   }
 }
 
-// ---------- rendering ----------
+//Rendering
 function el(tag, cls, text) {
   const n = document.createElement(tag);
   if (cls) n.className = cls;
@@ -173,6 +183,7 @@ function el(tag, cls, text) {
   return n;
 }
 
+//List block, dash placeholder if empty
 function listBlock(title, items, cls = "") {
   const box = el("div", `block ${cls}`);
   box.append(el("h3", "", title));
@@ -183,6 +194,7 @@ function listBlock(title, items, cls = "") {
   return box;
 }
 
+//Renders full character sheet, records in history per user
 function show(character, meta, { remember = true } = {}) {
   current = { character, meta };
   const s = els.sheet;
@@ -262,7 +274,7 @@ function show(character, meta, { remember = true } = {}) {
   s.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// ---------- history ----------
+//History
 function addToHistory(entry) {
   const list = load(STORE.history, []).filter((h) => h.character.name !== entry.character.name);
   list.unshift({ ...entry, at: Date.now() });
@@ -287,11 +299,12 @@ function renderHistory() {
   });
 }
 
-// ---------- utilities ----------
+//Utilities
 function slug(text) {
   return (text || "character").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "character";
 }
 
+//Client side file download
 function download(filename, content, type) {
   const blob = new Blob([content], { type });
   const url = URL.createObjectURL(blob);
@@ -306,6 +319,7 @@ function download(filename, content, type) {
 
 $("#clear-history").addEventListener("click", () => { remove(STORE.history); renderHistory(); });
 
+//Updates character counter, flags at 90% or higher of max characters
 function updateNotesCount() {
   if (!els.notes || !els.notesCount) return;
   const len = els.notes.value.length;
@@ -316,6 +330,7 @@ function updateNotesCount() {
 
 els.notes?.addEventListener("input", updateNotesCount);
 
+//Fills teh form with "Kiki" sample
 $("#example").addEventListener("click", () => {
   els.form.name.value = "Kiki";
   els.form.archetype.value = "gentle giant islander";
